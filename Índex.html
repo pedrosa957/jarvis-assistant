@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<title>J.A.R.V.I.S. | Assistente pessoal</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#0d1b2d;--line:#1c3855;--blue:#58b8ff;--muted:#91a9c1;--text:#eaf5ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#15385a 0,#07111f 48%);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+main{max-width:760px;margin:auto;padding:22px 16px calc(28px + env(safe-area-inset-bottom))}
+header{text-align:center;padding:20px 8px 18px}.orb{width:76px;height:76px;margin:0 auto 12px;border:1px solid #3c9fe5;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 28px #1688d955,inset 0 0 22px #1688d933;color:var(--blue);font-size:30px}
+h1{letter-spacing:.22em;font-size:23px;margin:0}.sub{color:var(--muted);font-size:11px;letter-spacing:.18em;margin-top:7px}
+.status{display:inline-flex;gap:8px;align-items:center;margin-top:14px;padding:7px 11px;border:1px solid #24543f;border-radius:99px;color:#8de5b2;font-size:11px;letter-spacing:.08em}.dot{width:7px;height:7px;border-radius:50%;background:#62d995;box-shadow:0 0 10px #62d995}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.tile,.panel{background:linear-gradient(145deg,#10243a,#0a1727);border:1px solid var(--line);border-radius:15px}
+.tile{padding:14px;min-height:86px}.tile b{display:block;font-size:13px;margin:7px 0 3px}.tile span{font-size:11px;color:var(--muted)}.ico{font-size:19px;color:var(--blue)}
+.panel{padding:15px;margin-top:12px}.panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.panelhead strong{font-size:13px;letter-spacing:.08em}.tag{font-size:10px;color:#a8c9e7;border:1px solid #2b4a68;padding:5px 8px;border-radius:99px}
+#chat{height:270px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:4px 1px 12px}
+.msg{max-width:88%;padding:10px 12px;border-radius:12px;font-size:13px;line-height:1.45;white-space:pre-wrap}.bot{background:#102b45;border:1px solid #214c70;align-self:flex-start}.user{background:#17456b;align-self:flex-end}
+form{display:flex;gap:8px}input{min-width:0;flex:1;background:#071421;color:var(--text);border:1px solid #294762;border-radius:11px;padding:12px;font-size:14px;outline:none}input:focus{border-color:var(--blue)}button{border:0;border-radius:11px;background:#1685c9;color:white;padding:0 16px;font-weight:650;font-size:13px}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.quick button{background:#102a42;border:1px solid #294c69;color:#bfe4ff;padding:8px 10px;font-size:11px}
+.note{font-size:11px;color:var(--muted);line-height:1.5;margin:12px 2px}.tasks{display:grid;gap:9px}.task{display:flex;gap:10px;align-items:center;color:#cfe2f3;font-size:12px}.task i{width:8px;height:8px;border-radius:50%;background:#4ca9e9}
+footer{text-align:center;color:#6f8aa5;font-size:10px;margin-top:18px;letter-spacing:.08em}
+@media(min-width:600px){main{padding-top:35px}.grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div class="orb">◈</div>
+ <h1>J.A.R.V.I.S.</h1>
+ <div class="sub">JUST A RATHER VERY INTELLIGENT SYSTEM</div>
+ <div class="status"><span class="dot"></span> INTERFACE ATIVA · MODO DEMONSTRAÇÃO</div>
+</header>
+<section class="grid">
+ <div class="tile"><div class="ico">⌘</div><b>Comandos</b><span>Central de interação</span></div>
+ <div class="tile"><div class="ico">◉</div><b>Planejamento</b><span>Organização de tarefas</span></div>
+ <div class="tile"><div class="ico">▤</div><b>Memória local</b><span>Histórico neste aparelho</span></div>
+ <div class="tile"><div class="ico">⌁</div><b>Sistemas</b><span>Integrações futuras</span></div>
+</section>
+<section class="panel">
+ <div class="panelhead"><strong>TERMINAL DE CONVERSAÇÃO</strong><span class="tag">JARVIS 1.0</span></div>
+ <div id="chat" aria-live="polite">
+  <div class="msg bot">Boa noite. Sou J.A.R.V.I.S. Minha interface inicial está operacional.\n\nNesta versão consigo demonstrar comandos básicos e manter o histórico neste navegador. A conexão com um modelo de IA será adicionada numa próxima etapa.</div>
+ </div>
+ <form id="form"><input id="prompt" autocomplete="off" placeholder="Digite um comando..." aria-label="Digite um comando"><button type="submit">Enviar</button></form>
+ <div class="quick">
+  <button type="button" data-cmd="/ajuda">Ajuda</button>
+  <button type="button" data-cmd="/hora">Ver horário</button>
+  <button type="button" data-cmd="/projeto">Novo projeto</button>
+  <button type="button" data-cmd="/limpar">Limpar conversa</button>
+ </div>
+</section>
+<section class="panel">
+ <div class="panelhead"><strong>PROTOCOLO DE DESENVOLVIMENTO</strong><span class="tag">EM CONSTRUÇÃO</span></div>
+ <div class="tasks">
+  <div class="task"><i></i> Interface e identidade visual</div>
+  <div class="task"><i></i> Chat de demonstração e histórico local</div>
+  <div class="task"><i style="background:#53677b"></i> Conectar um modelo de IA com segurança</div>
+  <div class="task"><i style="background:#53677b"></i> Memória e planejamento de tarefas</div>
+  <div class="task"><i style="background:#53677b"></i> Atalhos e recursos do iPhone</div>
+ </div>
+</section>
+<p class="note">Privacidade: esta demonstração guarda o histórico apenas no armazenamento local do navegador. Não digite senhas, códigos de acesso ou informações privadas. Ainda não envia mensagens, controla outros aplicativos nem está conectada a uma IA externa.</p>
+<footer>J.A.R.V.I.S. · PERSONAL ASSISTANT PROJECT · VERSION 1.0</footer>
+</main>
+<script>
+const chat=document.getElementById('chat'),form=document.getElementById('form'),input=document.getElementById('prompt');
+const KEY='jarvis_demo_chat_v1';
+function add(text,who,save=true){const el=document.createElement('div');el.className='msg '+who;el.textContent=text;chat.appendChild(el);chat.scrollTop=chat.scrollHeight;if(save)store();}
+function store(){try{localStorage.setItem(KEY,JSON.stringify([...chat.children].map(x=>({text:x.textContent,who:x.classList.contains('user')?'user':'bot'})).slice(-40)))}catch(e){}}
+function reply(s){
+ const t=s.trim().toLowerCase();
+ if(t==='/ajuda'||t==='ajuda')return 'Comandos disponíveis:\n/hora — mostra a data e hora deste aparelho.\n/projeto — inicia um rascunho de projeto.\n/limpar — limpa a conversa.\n\nAinda sou uma demonstração. O cérebro de IA será conectado numa próxima versão.';
+ if(t==='/hora')return 'Horário informado pelo aparelho: '+new Date().toLocaleString('pt-BR')+'.';
+ if(t==='/projeto')return 'Protocolo de projeto iniciado.\n\n1. Defina o objetivo.\n2. Divida em pequenas etapas.\n3. Liste os recursos necessários.\n4. Revise antes de executar.\n\nA memória de projetos será implementada em uma atualização.';
+ if(t==='/limpar'){chat.innerHTML='';add('Histórico visível limpo. Como posso ajudar?', 'bot');return null;}
+ return 'Comando recebido. Nesta versão ainda não estou conectado a um modelo de inteligência artificial, então não consigo interpretar pedidos livres ou executar ações no iPhone. Por enquanto, use /ajuda para ver os comandos de demonstração.';
+}
+form.addEventListener('submit',e=>{e.preventDefault();const s=input.value.trim();if(!s)return;add(s,'user');input.value='';const r=reply(s);if(r)add(r,'bot');});
+document.querySelectorAll('[data-cmd]').forEach(b=>b.addEventListener('click',()=>{input.value=b.dataset.cmd;form.requestSubmit();}));
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'[]');if(saved.length){chat.innerHTML='';saved.forEach(m=>add(m.text,m.who,false));}}catch(e){}
+</script>
+</body>
+</html>
